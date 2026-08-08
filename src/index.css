@@ -1,4 +1,5 @@
 :root {
+  /* Existing Variables */
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -8,11 +9,22 @@
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* New Soft Theme Variables */
+  --color-bg: #f7f9fc; /* Soft grayish blue background */
+  --color-surface: rgba(255, 255, 255, 0.7);
+  --color-primary: #9bbfab; /* Soft sage green */
+  --color-primary-soft: rgba(155, 191, 171, 0.3);
+  --color-primary-dark: #7a9c89;
+  --color-secondary: #c9b1bd; /* Soft lavender/mauve */
+  --color-secondary-soft: rgba(201, 177, 189, 0.3);
+  --color-border: rgba(255, 255, 255, 0.4);
+  --text-main: #2d3748;
+  --text-muted: #718096;
+
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -108,4 +120,17 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* --- Utilities --- */
+.glass-panel {
+  background: var(--color-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.soft-shadow {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
 }

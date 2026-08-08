@@ -1,24 +1,17 @@
-import './App.css'
-import { supabase } from './supabaseClient'
-import { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import './App.css';
 
 function App() {
-  const [dbStatus, setDbStatus] = useState('Connecting to Supabase...')
-
-  useEffect(() => {
-    // A simple check to see if the client initialized
-    if (supabase) {
-      setDbStatus('Successfully connected to Supabase! 🚀')
-    }
-  }, [])
-
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>My Fullstack App</h1>
-      <p style={{ fontSize: '1.2rem', color: '#4CAF50' }}>{dbStatus}</p>
-      <p>Your React + Vite + Supabase + Render architecture is fully set up.</p>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
